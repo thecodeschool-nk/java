@@ -1,0 +1,616 @@
+Java
+
+basic unit
+
+single line of instructions to execute
+
+command "Get me a pen, please"
+
+command ---> instruction  --> expression (computing/mathematical)
+
+command can be a single step or group of steps
+
+
+JVM --> Java Virtual Machine
+ - a layer above Operating System (OS)
+ - takes instruction written in Java and gets it executed by OS
+ - simplifies plaftform neutrality
+
+
+Most of the programming languages used to follow following:
+
+.cpp -> obj/exe -> OS
+
+
+ .java file ----> .class (bytecode) --> executable/binary --> OS
+
+ Compilation --> Interpretation --> translation
+
+ Syntax - format / guidelines / bounderis
+ 	- a way to express yourself what you expect JVM to do
+
+
+Categories of Programming 
+1. System programming ---> OS, Utilities, native drivers, native compilers
+2. Application Programming ---> Scientific applications, Image processing, GPS location calculations, Word Processor, IntelliJ
+3. Game programming --> 
+
+
+Categories of Programming languages:
+1. Machine Language (binary---> 0 or 1)
+2. Assembly Language 
+
+124 + 973 ---> LOD 124 MM1
+				LOD 973 MM1
+			    ADD 124 973
+			    RES MM2
+
+3. General Purpose Language
+
+	3.a. Structural Programming
+	3.b. Functional Programming
+	3.c. Object Oriented Programming
+	3.d. Scientific Programming
+
+C, CPP, COBOL, Basic, Visual Basic, Pascal, Scala, Java, GoLang, JavaScript etc.
+
+
+Object Oriented Programming language will have basic building blocks as:
+Class -- general specfication, blue print, roadmap, design
+Customer (id --> account number, name, personal details  --->> attributes/properties/states), (deposit,withdraw etc.) -->> behaviors
+
+Account (type, limit, etc.)
+
+Person - Attributes (name, height, complexion, ethinicity, hair style, gender etc.) ---> Class
+
+Laptop - (make, year of manufacturing, product type, product code, etc.)
+
+
+Object -- instance of class, lifecycle
+A laptop (make:Apple, year of manufacturing:2022, product type:MacBook, product code:2r435647, etc.)
+A person (name:Rushikesh, height:6'1", complexion:fair, ) ---> Object
+
+
+1 2 3 4.5 --> numbers (whole number-->byte --> 1 byte, short --> 2 bytes, int --> 4bytes, long---> 8 bytes, fraction numbers/ -> float-->4bytes, double-->8bytes)
+1 byte - 2 ** 8 --> (-Ve 128 - 0 - +Ve 127)
+
+a b c d --> alphabets (String, char)
+@ $ % --> special characters (String, char)
+false true --> Binary/boolean (boolean)
+
+"123" ---> 123 (Integer.parseInt("123"))
+"12.5f" --> 12.5f (Float.parseFloat("12.5f"))
+
+Typed language
+Signed laguage
+
+
+Constructor:
+ - special methods
+ - does not return a value
+ - purpose of constructor is to initilize 
+
+
+ Types of Constructor:
+ 	1. Default/Implicit constructor - JVM supplies
+ 	2. Explicit no-arg constructor 
+ 	3. Explicit overloaded/parameterized/args constructor
+
+
+ Java Memory:
+ 	1. Heap memory - objects, global variables (class reference, anything declared at class level)
+ 	2. Stack - methods, local variables/references, method parameters
+ 	3. String pool 
+
+
+setName
+main
+
+
+
+Variable - reference to value/object/constant stored in memory
+			temperature = 31
+			temperature = 32
+			temperature = 31
+			temperature = 30
+
+			- can be Mutable (can be modified) / Immutable (cannot be changed) -->static final
+
+Constant - fixed values, meaning of the value does not change
+		ex. "India", 123, 5.6f, 31
+
+Primitive Types
+byte, short, int, long, float, double, char, boolean
+
+123
+
+
+Object types
+String, Wrapper classes (Byte, Short, Integer, Long, Float, Double, Character, Boolean)
+
+
+Default values
+Objects will have 'null' as default value
+All primitives has their fixed default values:
+	byte/short/int/long --> 0
+	float/double --> 0.0f/0.0d
+	boolean --> false
+	char --> \u0000
+
+
+this keyword
+
+
+Client ---> Services
+GUI - Graphical User Interface
+CLI - Command Line Interface
+
+Standalone Programs - Alarm, Calculator, database backup scripts, archival schedulers etc.
+
+Web Application - Client (Mobile, Browser), Web pages (HTML, CSS, JavaScript etc., AngularJS, ReactJS), Business Logic (Java, Spring, Hibernate etc.), Database (Oracle, MySQL, PostgreSQL, DB2, etc.)
+	- Request ---> Response
+	  Client  ---> Server
+
+	- Protocol -> communication rules
+		TCP, HTTP, POP3, SMTP, IGMP, ICMP, UDP, MQTT etc.
+
+		https://us04web.zoom.us/postattendee?mn=F9aGuBTyFiAI5GoYcPqdS8Z7ombxSwow_6or.isXD3u5IQ-_PuOUU&id=32
+
+		http://localhost:8080/students
+
+Enterprise Applications
+ - Web app
+ - Database 
+ - Messaging Queue (ActiveMQ, RabbitMQ, Kafka etc.)
+ - File storage
+ - Services (SOAP, RESTful)
+
+
+ Standalone - Core Java/J2SE or JSE
+ Web app - Core Java + Servlet + JSP
+ Enterprise App - Core Java + Servlet + JSP + JMS + Frameworks (spring,hibernate etc.)
+
+
+ JDK - Java Development Kit
+
+
+package - package in java a way to organize code in different folders
+		- packages are folders
+		- keep all related classes in one package (eg. database related code can go in one package called dbutil)
+		- can have hierarchy of packages, one package inside another
+		- package hierarchies must be . (dot) separated
+		- can have multiple packages at same level
+		- naming of package is preferred to be a single word
+		- naming of package should be small case
+		- base package -> oraganization website in reverse
+		- package should be first statement in Java file (if any)
+		- package declaration starts with package keyword.
+
+
+Cases:
+	- Capital cases - STUDENT
+	- Small cases - student
+	- camelCase - studentDetails
+	- PascalCase - StudentDetails
+
+static - variable, method
+final - variable, class, method
+
+Access Modifiers: --- visibility control, variable, class, method
+private
+protected -- see in future session
+package default
+public
+
+
+private < package default < protected < public
+
+Access Specifier	Inside Class	Inside Package	Outside package subclass	Outside package
+Private				Yes				No 				No							No
+Default				Yes				Yes				No							No
+Protected			Yes				Yes				Yes							No
+Public				Yes				Yes				Yes							Yes
+
+
+database.subpackage.subsubpackage
+
+
+Inheritance
+
+
+- Class attributes should be declared with private
+- if needed create getter or setter
+- create constructor
+
+Immutable - String, Integer, Boolean, Float, Double, Character, Byte, Short, Long
+
+	- final
+	- hide default constructor, private
+
+
+Conditional Statements:
+Decision flow
+Control Flow
+
+Type - 1
+
+if(condition) {
+	statements;
+} 
+
+
+Type - 2
+
+if(condition) {
+	statements;
+} else {
+	statements;
+}
+
+
+Type - 3
+
+if(condition) {
+	statements;
+} else if(condition) {
+	statements;
+} else {
+	statements;
+}
+
+
+Type - 4
+
+if(condition) {
+	if (condition) {
+		statements;
+	} else {
+		statements;
+	}
+}
+
+
+
+Switch-Case control:
+switch-case-default
+
+switch(choice) {
+	case case_id1: statements;
+
+	case case_id2: statements;
+
+	....
+
+	default: statements;
+}
+
+
+Break Statement:
+break;
+
+
+
+Operators In Java:
+
+expression --> operand3 operator2 operand1 operator1 operand2
+
+				binary expression:
+				a = b + c
+
+				unary expression
+				a = !a
+
+
+Unary Operators:
+! - negation
+- - negative
+
+a = 10;
+a = -a;
+
+a = -10
+
+
+b = true;
+
+b = !b;
+
+b = false
+
+++ --> increment
+
+-- --> decrement
+
+a = 10;
+a = a + 1;
+a++;
+a--;
+++a;
+--a;
+
+
+Binary Operators:
+
+1. Assignment Operators
+= 
+a = a + b;
+
+flavors:
++= 
+a += b
+-=
+*=
+/=
+
+
+2. Arithmetic Operators:
++
+-
+* 
+/
+%
+
+3. Comparision/Relational Operators:
+>  -> greater than
+<  -> smaller than
+== -> equals to
+!= -> not equals to
+>= -> greater than equals to
+<= -> lesser than equals to
+
+
+4. Logical Operators:
+&& -> AND
+|| -> OR
+^  -> XOR
+
+0 - 00
+1 - 01
+2 - 10
+3 - 11
+
+
+2 ^^ 0 = 1
+2 ^^ 1 = 2
+2 ^^ 2 = 4
+		 8
+		16
+		32
+
+
+		32 16 8 4 2 1
+				  0	0 --> 0
+				  0	1 --> 1
+				  1	0 --> 2
+				  1 1 --> 3
+				1 0 0  
+
+
+0 --> false
+1 --> true
+
+Truth table for AND gate 
+
+a  b   output
+0  0     0
+0  1     0
+1  0     0
+1  1     1
+
+Truth table for OR gate 
+
+a  b   output
+0  0     0
+0  1     1
+1  0     1
+1  1     1
+
+Truth table for XOR gate 
+
+a  b   output
+0  0     1
+0  1     0
+1  0     0
+1  1     1
+
+
+
+
+5. Bitwise Operators
+& --> Bitwise AND
+| --> Bitwise OR
+
+
+
+ 2 & 3 = 2
+
+ 0010 & 0011 =  0010 --> 2
+
+ 5 & 3 = ?
+
+ 0101 & 0011 = 0001 -> 1
+
+ 124 & 35 = ?
+
+
+
+6. Shift Operators:
+<< --> left shift 
+>> --> right shift
+>>> --> right shift with zero fill
+
+ 2 << 2 = ?
+ 0000 1000
+
+MSB --> sign bit
+1 --> negative
+0 --> positive
+
+
+8 bit
+0 0000000
+0 0000010 --> 2
+1 0000010 --> -2
+
+
+
+
+
+Ternary Operator:
+(condition) ? true : false;
+
+(day.equals(Tuesday)) ? office : holiday;
+
+equivalent to:
+if (condition) {
+	statement;
+} else {
+	statement;
+}
+
+if (day == "Tuesday") {
+	return "go to office";
+} else {
+	return "holiday";
+}
+
+
+
+String Pool:
+	Strings created once and reused
+
+
+.equals()
+
+== 
+
+
+Pass by Value vs Pass by Reference vs Pass by Pointer/address???
+
+C language:
+Employee *emp1 = &emp; // memory location
+
+processSalary(&&emp1)
+
+
+emp -----> reference is value --> Memory[[address][object]]
+primitive a -------> data is value
+
+
+variable ---> reference  ---> physical memory location addrees
+emp ----> 343535664 ----> AD34EA01
+
+a ---> 5
+
+Inheritance --> Derive
+
+Super class --> Sub class
+
+Parent class --> Child class
+
+
+
+Object class in Java:
+
+getClass()
+
+hashCode()
+
+equals()
+
+clone()
+
+toString()
+
+notify()
+
+notifyAll()
+
+wait()
+
+finalize() ---> Garbage Collector
+
+
+Garbage Collectors
+ - identify objects are not use (not being referred by any reference)
+ - not guarateed to execute by external invocation
+ - different algorithms for GC (Serial GC, ConconGC, ParaGC, Mark-Sweeps)
+
+
+
+Does Java have memory leak issue?
+Java start memory -Xms (128 MB)
+				  -Xmx (256 MB)
+
+
+Java ---> Database
+
+Connection object
+Patient object
+MedicalHistory object
+LogFiles object
+
+1 request --> 100 objects
+1000 request --> 100,000 objects
+
+
+Loops in Java:
+1. while
+	syntax:
+			while (condition) {
+				statements;
+			}
+2. do-while
+	syntax:
+			do {
+				statements;
+			} while (condition);
+3. for 
+	syntax:
+			for (initialization; condition; increment/decrement) {
+				statements;
+			}
+
+Array:
+	- contiguous memory locations 
+	- stores homogenous types 
+	- size of memory is fixed once define
+	- index starts with zero
+	- length is property of array which denotes max number of elements in array
+	- can be one dimentional, two dimentional or multi-dimentional
+		eg.: row = 1, col = length ---> 1-D
+				row1 --> {1, 2, 3, 4, 5}
+					num[4]  ==> 5
+			 row = define it, col = define it
+			 {   c1 c2 c3
+	row1 -->	{1, 2, 3},
+	row2 --> 	{4, 5, 6},
+	row3 -->	{6, 7, 8}
+			 }
+			 r * c == m * n == 3 * 3
+			 num[1][1] ==> 5
+
+
+
+
+
+Collection Framework
+enhanced for loop
+for each
+
+int []arr = {1, 2, 3, 4, 5}
+for (int i : arr) {
+	System.out.println(i);
+}
+
+
+Streams.forEach()
+
+
+
+
+
+
+
+
+

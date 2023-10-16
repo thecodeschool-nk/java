@@ -1,0 +1,228 @@
+fundamental - assignments
+1. a. Set all the missing attributes for person1 object (refer code) and print it.
+   b. Create and print 4 more such Person objects.
+
+2. Quick go through following:
+https://www.javatpoint.com/history-of-java
+https://www.javatpoint.com/features-of-java
+https://www.javatpoint.com/difference-between-jdk-jre-and-jvm
+https://www.javatpoint.com/jvm-java-virtual-machine
+
+3. Create a Mobile class and add:
+	a. attributes
+	b. behaviors
+
+public class Mobile {
+
+    //attributes
+
+    //behaviors
+}
+
+
+4. Create a Calculator class and behaviors such as:
+	1. addition (already added)
+	2. subtractin
+	3. multiplication
+	4. division
+
+class Calculator {
+    public int addition(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    // subtraction
+    // multiplication
+    // division
+}
+
+public class CalculatorTest {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+
+        int result = calculator.addition(10, 20);
+        System.out.println(result);
+    }
+}
+
+5. Write a Java class for any of following:
+	a. Customer
+	b. Invoice
+	c. Order
+	d. User
+	e. Booking
+	f. Ticket
+
+	Develop them further with:
+	i. Attributes
+	ii. Behaviors (Getters/Setters and Operations)
+	iii. Constructors
+
+Write a client class/method to test them.
+
+6. Write a class to make it immutable. You can take Invoice class from previous exercise and make it immutable.
+
+Strategies to define immutable:
+	- The class must be declared as final so that child classes can’t be created.
+	- Data members in the class must be declared private so that direct access is not allowed.
+	- Data members in the class must be declared as final so that we can’t change the value of it after object creation.
+	- A parameterized constructor should initialize all the fields performing a deep copy so that data members can’t be modified with an object reference.
+	- Deep Copy of objects should be performed in the getter methods to return a copy rather than returning the actual object reference) 
+
+
+Aug-16 (Use if-else or switch-case appropriately to solve following)
+7. write a program to compare 2 numbers and determine which one is greater.
+
+8. write a program to compare 3 numbers and determine which one is greatest among.
+
+9. write a program to convert score to grade:
+above 30 and below 40 ---> F
+40 and below 50 ---> E
+50 and below 60 ---> D
+60 and below 70 ---> C
+70 and below 80 ---> B
+80 and below 90 ---> A
+90 and Above    ---> A+
+
+eg: if score = 55 then grade printed should be D
+
+10. write a program to suggest a beverage to different age group:
+18 and above but below 30 --> Juice
+30 and above but below 50 --> Tea
+above 50 ---> Medicine
+
+if age = 35 then beverage recommended would be Tea
+
+
+Aug 17 (Use operators %, /, + and - to solve)
+11. Write a program to calculate the sum of the digits of a 3-digit number.
+Number : 132        Output : 6
+
+12. Write a program to reverse a 3-digit number. 
+E.g.-Number : 132        Output : 231
+
+
+13. Write a program to convert Fahrenheit into Celsius.
+
+14. Length and breadth of a rectangle are 5 and 7 respectively. Write a program to calculate the area and perimeter of the rectangle.
+
+15. Write a program to determine if number entered by user is Odd or Even.
+
+
+Aug 18 (Loops, Array)
+16. Write a program to calculate the sum of first 10 natural number.
+
+17. Write a program to print numbers from 1 to 10.
+
+18. Write a program that prompts the user to input a positive integer. It should then print the multiplication table of that number. 
+
+19. Write a program to find the factorial value of any number entered through the keyboard. 
+
+20. Two numbers are entered through the keyboard. Write a program to find the value of one number raised to the power of another. (Do not use Java built-in method)
+
+21. Write a program that prompts the user to input an integer and then outputs the number with the digits reversed. For example, if the input is 12345, the output should be 54321.
+
+22. Write a program that reads a set of integers, and then prints the sum of the even and odd integers.
+
+23. Write a program that prompts the user to input a positive integer. It should then output a message indicating whether the number is a prime number. 
+
+24. Write a program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros entered. (Can use array)
+
+25. Write a program to enter the numbers till the user wants and at the end the program should display the largest and smallest numbers entered. (Can use array)
+
+26. Write a program to print out all Armstrong numbers between 1 and 500. If sum of cubes of each digit of the number is equal to the number itself, then the number is called an Armstrong number.
+For example, 153 = ( 1 * 1 * 1 ) + ( 5 * 5 * 5 ) + ( 3 * 3 * 3 )
+
+27. Write a program to print following :
+
+i)
+
+**********
+**********
+**********
+**********
+
+ii)
+
+*
+**
+***
+****
+*****
+
+iii)
+
+        *
+      **
+    ***
+  ****
+*****
+ 
+iv)
+
+        *
+      ***
+    *****
+  *******
+*********
+
+v)
+
+        1
+      222
+    33333
+  4444444
+555555555
+
+vi)
+
+        1
+      212
+    32123
+  4321234
+543212345
+
+
+28. Write a program to print Fibonacci series of n terms where n is input by user :
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ……..
+
+*** Fibonacci number is a series of numbers in which each number is the sum of the two preceding numbers. The simplest is the series 0, 1, 1, 2, 3, 5, 8, etc.
+
+29. Write a Java program to sort a numeric array and a string array.
+
+30. Write a Java program to calculate the average value of array elements.
+
+31. Write a Java program to insert an element (specific position) into an array. 
+
+32. Write a Java program to find the duplicate values of an array of integer values.
+
+33. Write a Java program to find the common elements between two arrays (string values). 
+
+34. Write a Java program to find the second smallest element in an array. 
+
+35. Write a Java program to shuffle a given array of integers.
+Example:
+Input :
+nums = { 1, 2, 3, 4, 5, 6 }
+Possible Output:
+Shuffle Array: [4, 2, 6, 5, 1, 3]
+
+36. Write a program to transpose following 2D array.
+Input:
+1 2 3
+4 5 6
+7 8 9
+
+Output:
+1 4 7
+2 5 8
+3 6 9
+
+37. Write a program to find path possible in 2D array (filled with 0s and 1s), between starting index to target index, where starting index is [0][0] to target index [rowLen-1][colLen-1]. Here, O indicates path does not exist, 1 indicates path exists.
+Input:
+1 0 0 1
+0 1 0 0 
+1 0 0 1
+0 1 1 1
+
+Output: [0][0]-->[1][1]-->[2][0]-->[3][1]-->[3][2]-->[3][3]

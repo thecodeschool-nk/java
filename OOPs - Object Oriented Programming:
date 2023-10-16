@@ -1,0 +1,781 @@
+OOPs - Object Oriented Programming:
+
+Object
+
+
+Problem domain: E-Commerce Platform
+buy - sell
+
+Customer
+User
+
+Vendor
+
+Product
+
+
+Object - is an instance of Class.
+
+Class - is blueprint. Design, Roadmap etc. Can be reused. Attributes and Behaviors
+
+
+
+Human - Class
+
+Lahari - Object
+
+Mathew - Object
+
+
+4 Pillars in OOPs:
+
+1. Encapsulation
+2. Abstraction
+3. Inheritance
+4. Polymorphism
+
+
+1. Encapsulation - Bind the data with behaviors (class-object), protect manipulations, visibility (access specifiers)
+
+
+Access Specifiers (Modifiers): private < package Default < protected < public
+
+package com.myproject.mypkg;
+
+class Student {
+	int rollNo;
+	String name;
+
+
+
+}
+
+public class TestStudent {
+	public static void main(String[] args) {
+
+		Student pavan = new Student();
+		pavan.name = "Sohan";
+
+
+		pavan.name= "XYZ";
+	}
+}
+
+
+2. Abstraction - show what is relevant, hide those unnecessary details.
+
+				- attributes and behaviors are put as per who is going to consume.
+
+
+Example 1:
+
+Human ---> Lahari 
+
+
+Organization --- Mac (Personal Details:name, age, gender, Education details, Project details, Trainings, Achievements etc.)
+
+Hospital --- Mac (Personal Details:name, age, gender etc., Health Details etc.) 
+
+
+Example2:
+
+Car
+
+Manufacturer ()
+
+Driver ()
+
+Mechanic ()
+
+
+Possibilities:--
+
+1. Abstract Class - abstract keyword in declaration, cannot create an object, may have abstract methods, may have concrete methods
+	keyword: abstract
+
+	abstract class Human {
+		//define common attributes/behavior for human in general
+
+		public void walk() {
+
+		}
+
+		public abstract void wearJwellaries();
+	}
+
+	class Man extends Human {
+		// define specific attributes/behaviors for man
+
+		@Override
+		public void wearJwellaries() {
+			//how
+		}
+	}
+
+	class Woman extends Human {
+		// define specific attributes/behaviors for man
+	}
+
+	Human human1 = new Human(); // cannot create an object from abstract class
+
+
+Opposite: Concrete, Solid etc.
+
+2. Interface: just like a class but a. cannot create an object, b. 100% abstract class, contracts, high level definition, mutual agreement, methods are public abstract and attributes are public static final by default
+
+	keyword: interface
+
+
+	interface Animal {
+		public static final int NUMBER_OF_LEGS = 4;
+		
+		public abstract boolean canBite();
+
+		public abstract boolean canSwim();
+
+	}
+
+
+	class Dog implements Animal {
+		public boolean canBite() {
+
+		}
+
+		public boolean canSwim() {
+
+		}
+
+	}
+
+
+Constants In Java:
+	- you cannot change value once initialized
+	- static and final
+	- use upper cases for constant, multiple words are concatenated with underscore char (_)
+	- MAX_VOLUME, AGE_CRITERIA, MINIMUM_AGE, Integer.MAX_VALUE
+	- public or Default --> public static final int AGE_LIMIT = 40;
+	- No need to use an object while referring constants
+
+
+
+Inheritance:
+	- Super class --> subclass relationship
+	- is_a relationship
+	- use extends while inheriting from class and use implements while inheriting from interface
+	- any subclass cannot derive from more than 1 class
+		e.g Dog extends Animal is valid one but, Dog extends Animal, Creature (all 3 are classes)
+	- class can implement any number of interfaces at a time: Dog implements Animal, Creature (Animal and Creature are interfaces)
+	- interfaces can extends other interfaces: Animal extends Creature (both of them are interfaces)
+
+Types:
+1. Single Level inheritance - Man extends Person
+2. Multi-Level inheritance - AmericanMan extends Man : Man extends Person: Person extends Human
+3. Multiple Interitance - Dog extends Animal, Creature --> this is not possible in Java with classes though we can achieve it with interfaces
+
+
+Polymorphism:
+	- having multiple forms for same name
+	- method signature: 
+
+		public void main(String[] arr){
+
+		}
+
+
+
+Types of Polymorphism:
+1. static or compile-time polymorphism or early binding ---> method overloading
+	- public int sum(int,int)
+	  protected float sum(float,float)
+	  public double sum(double,double)
+	  public int sum(int,int,int)
+	  public float sum(int,float)
+
+2. dynamic or runtime polymorphism or late binding --> method overriding
+	- cannot have more narrow access specifiers (can have same or wider)
+
+	- super class has -> protected void work()
+		then subclass --> protected void work() or public void work()
+		cannot -> void work() or private void work();
+
+	- can throw narrower exception 
+
+	private < package default < protected < public
+
+
+
+Exception Handling In Java
+
+
+Exception - An abnormal condition
+		  - when exception occurs it changes the flow or termination of program
+		  - it is a class in Java which represents exception
+		  - try to overcome exception to establish different flow
+		  - all exceptions cannot be handled 
+		  - NullPointerException, ArithmeticException, RuntimeException, FileNotFoundException, ArrayOutOfBoundException, CloneNotSupportedException
+
+Error - fatal categories of Exception
+  	  - does not let you recover
+  	  - causes complete shutdown of system
+  	  - we cannot handle error
+  	  - OutOfMemoryError
+
+Throwable is super most class in Exception hierarchy
+
+
+Classifications of Exception
+                      Throwable
+    					|
+    		  --------------------------
+    		  |							|
+    		Error					Exception
+
+
+
+Handle Exception: 
+	try -> try-catch, try-catch-finally, try-finally
+	catch
+	finally
+	throw
+	throws
+
+
+	try {
+            // cause of exception statement
+        } catch (Exception e) {
+            
+        } finally {
+            
+        }
+
+propagation of exception
+hadle or declare 
+stacktrace
+
+
+Types of Exception
+Compiletime exception - Checked Exception
+Runtime exception - Unchecked Exception
+
+
+Categories of Exception
+Built-in Exception
+Custom Exception - LateForSessionException, TrainMissesException
+
+
+Exception Rules related to Inheritence:
+1. Any parent method declare checked exception, subclass should throws same checked exception or specialized (Subclass) exception.
+2. There are no restrictions regarding runtime exceptions, even parent class method is not declaring any exception still child class can declare runtime exceptions.
+
+Parent class:
+protected int sum(int a, int b) throws <checked_exception>
+
+eg. protected int sum(int a, int b) throws FileNotFoundException
+
+Child class
+public int sum(int a, int b) throws <same_checked_exception> or <subclass_checked_exception>
+
+eg:
+Legal: protected int sum(int a, int b) throws FileNotFoundException
+		protected int sum(int a, int b) throws RuntimeException
+	   
+Illegal: protected int sum(int a, int b) throws IOException
+
+
+Generalization
+Animal 
+
+
+Specialization
+LabraDog
+
+
+Relationship between classes:
+IS_A ---> Inheritence
+HAS_A ---> Association
+
+
+
+Association:
+one-to-one
+one-to-many
+many-to-one
+many-to-many
+
+Association has 2 forms:
+1. Composition - Strong relation --> Car HAS_A Engine
+2. Aggregation - Weak relation --> Person HAS_A Address
+
+
+CharSequence (interface) is implemented by below 3:
+
+String - Immutable class (final)
+		-  there are 2 ways to create an object of String class: literal way and new keyword
+		- string pool
+
+
+StringBuilder
+
+StringBuffer (threadsafe)
+
+
+Character Sequence: aadfbjklj32r5t64lk*q0)*
+
+char ---> a b c s 
+
+
+ASCII
+UTF-8
+UTF-16
+UTF-32
+ISO-8859-1
+
+A-Z --> number representation ---> 65 - 91
+a-z --> ?
+0-9 --> ?
+special char -?
+
+
+Collision Hashcode
+hashcode() and equal() method contract?
+
+
+Collection Framework:
+
+- java.util.*
+ 
+- Collection of data structure
+- Data structure is a way to organize data
+- organization of data is done based on operations:
+	- Read the data
+	- Write the data
+	- Modify / Delete the data
+- Dynamic in nature
+	- storage
+	- traversing
+	- type 
+
+
+
+Collection -
+	1. List - Ordered based on insertion collection, 
+		mylist = {"7 habits", "thinking in Java", "spring in action"}
+		mylist(2) = "wings of fire"
+		mylist = {"7 habits", "thinking in Java", "wings of fire", "spring in action"}
+		- add(), get(), remove(), contains(), addAll(), 
+
+		- ArrayList, LinkedList, Vector, Stack
+		- Initial Capacity = 10, override default initial capacity by using right constructor
+		- ensureCapacity()
+		- size()
+		- load factor
+
+	a. ArrayList - |1|2|3|9|4|5|  ---> add(3, 9), remove(3) or remove(9)
+	b. LinkedList - Node (Data + Ref to next Node), HEAD Node, TAIL Node
+	c. Vector - ArrayList, threadsafe, synchronized operation, read -locks - write
+	d. Stack - LIFO, Last In First Out, push(), pop() --> read and remove
+
+		[1, ref]-> [2, ref]-> [3, ref]-> [4, ref]->NULL
+
+	2. Set - Maintain unique collection, no duplicates
+			myset = {1, 2, 3, 1, 3, 6, 3, 5} --> {5,2,1,3,6}
+			- add(), get(), remove(), contains(), addAll(), 
+
+	3. Queue - FIFO, First In First Out
+			 - Rear and Front
+			 - insert(), peek(), poll()
+
+Generic: 
+	Element - e
+	Type - t
+	Value - v
+	Key - k
+
+
+Autoboxing/Unboxing - 
+
+		int ---> Integer
+
+		Integer i = new Integer(10);
+		Integer j = i + 1;
+
+
+
+Marker Interface - has no members declared.
+	e.g: RandomAccess, Cloneable, java.io.Serializable
+
+
+
+Hashcode - unique identifier for object
+		 - numerical value
+
+
+
+Based on Hashcode: 
+HashSet
+LinkedHashSet
+
+HashMap
+Hashtable
+
+
+Operations:
+1. Reading the value
+2. Writing (insert, update) the value
+3. Delete the value
+
+
+
+Time Complexity:
+
+Inputs:
+	a) best case 
+	b) Average case
+	c) worst case
+
+
+List:
+add() ---> O(n)
+remove() --> O(n)
+get() -> O(n)
+
+
+
+worst case: adding 8th element
+
+best case: adding 2nd element
+
+avg case: 3 - 7 element
+
+
+add() ---> O(n)
+remove() --> O(n)
+get() -> O(1)
+
+nlogn
+
+
+
+bookName = "Who want to be millionaire" ---> hashcode() -> 1233454364 --> hashing() --> hashcode % 10 --> 4
+
+"dog" --> 123 --> 1
+"god" --> 123 --> 1
+
+
+1-10000
+
+
+Bucket (LinkedList/BinarySearchTree) 125
+
+
+hashCode() and equals() method contract??
+
+HashCode collision??
+
+
+
+HashMap
+- Keys are unique
+- No Null Key
+- Duplicate values are allowed
+- One Null value is allowed
+
+[firstName:Lahari, name:Lahari, test:null] 
+
+
+1 4 2
+
+   2
+1    4
+
+
+student1, student2, student3
+
+
+Order of Elements:
+1. Insertion Order
+2. Sorting:
+	a. Ascending
+	b. Descending
+	c. Dictionary
+
+
+java.util.concurrent
+
+API - Application Programming Interface
+
+
+Arrays of Person objects
+Person persons[] = new Person[10];
+
+Collections of Person objects
+List<Person> personList = new ArrayList<>();
+
+
+Sorting algorithms:
+1. Selection Sort
+2. Bubble Sort --> O(n**2)
+3. Insertion Sort
+4. Quick Sort
+5. Merge Sort --> O(logn)
+6. Heap Sort
+
+	
+5 Principles of OOPs:
+S. O. L. I. D.
+
+1. S -> Single Responsibility Principle (SRP) --> clean code ---> Low or High Cohesion ---> Tight or Lose Coupling
+2. O -> Open-Close Principle (OCP)
+3. L -> Liskov Substitution Principle (LSP)
+4. I -> Interface Segregation Principle (ISP)
+5. D -> Dependency Injection Principle (DIP)
+
+
+Comparable Vs Comparator
+
+
+Comparable 
+
+int compareTo(Object obj)
+
+
+obj1.compareTo(obj2)
+
+Return ---> 1-->bigger object, 0-->equal, -1-->smaller object
+
+
+Custom classes --->
+primitives (==) --> Wrapper classes, String
+objects
+
+
+
+Comparator
+int compare(Object object1, Object object2)
+
+
+
+
+
+=====================================================
+Database
+Tables
+Rows
+Columns
+
+
+Persistent Layer, Storage
+
+Structure Query Language (SQL)
+
+Operations:
+1. Create (Write/Insert/Add)
+2. Read (Fetch)
+3. Update (Manipulate)
+4. Delete (Remove)
+
+CRUD Operations
+
+Types:
+	MySQL
+	Oracle
+	MS SQL Server
+	PostgreSQL
+	DB2
+	MariaDB
+
+ACID Property:
+Atomicity
+Consistency
+Isolation
+Durable
+
+
+Transaction
+1 read and 1 write ---> 1 transaction
+1 delete --> 1 transaction
+1 read 1 update and 1 read --> 1 transaction
+
+
+Connect to DB --> Open Sesssion --> Begin Transaction --> execute operations --> End Transaction --> Close Session
+
+Commit transaction 
+Rollback transaction
+
+
+
+Database Driver (Software/Code)
+
+Types - 
+Type 1 -- ODBC-JDBC Bridge Driver
+Type 2 -- Native JDBC Driver
+Type 3 -- JDBC Network driver
+Type 4 -- Thin JDBC driver
+
+
+URL of Database (consisting of port)
+Username
+Password
+
+HTTP/TCP/IP
+PORT -->
+
+
+Statement ---> Query  ---> SQL Injections
+PreparedStatement
+CallableStatement ---> Stored Procedures
+
+
+ResultSet
+
+
+Transaction Isolation:
+1. read-uncommitted
+2. read-committed
+3. read-repeatable
+4. Serializable 
+
+1 read --- txn1
+1 write -- txn2
+
+
+txn1 --- begin to execute
+txn2 --- will be in waiting state
+txn1 --- completes
+txn2 --- begin to execute
+txn2 --- completes
+
+Lock on table
+Lock on row
+
+Transaction Propagation:
+Required
+Required_new
+Mandatory
+Never
+Supports
+Not_Supported
+
+
+
+Hibernate 
+
+ORM - Object Relation Mapping
+
+Java Object -----> Entity (Table---primary key -> foreign key)
+
+
+
+Java Object:
+	- Model/POJO (Plain Old Java Object)
+	- VO(Value Object)/DTO(Data Transfer Object)
+	- Bean
+	- Entity
+
+
+
+Multithreading In Java
+
+Process - organized set of program which solves specific problem
+
+
+Thread - basic unit of execution, far lighter than process
+
+
+A process of Data Prediction on 5 years of data takes 60 minutes
+If we break 5 years of data in monthly, it would be 60 months, we can run 60 threads: 1 thread 1 month
+
+60 threads will complete the job in 1 minute 
+
+
+Resources:
+	CPU
+	Memory
+	I/O, file, disk
+
+
+	1 CPU - Serially executing
+
+	Multi-Core - Executing Parallel
+
+
+
+How to create threads in Java:
+
+1. Thread class
+2. Runnable interface
+3. ServiceExecutor
+4. Callable interface
+
+
+sleep()
+wait() ----> Object class
+notify()
+notifyAll()
+
+
+Using wait/notify
+Step 1
+readerThread ---> running
+
+writerThread ---> waiting
+
+
+Step 2
+readerThread ---> notifies to writerThread once readerThread is ready with input
+
+writerThread ---> running
+
+
+Using sleep
+Step 1
+readerThread ---> running
+
+writerThread ---> waiting (sleep(1000))
+
+
+Step 2
+readerThread ---> writerThread wakes up and checks if readerThread is ready with input
+
+writerThread ---> running
+
+
+synchronized --> method, block
+
+
+Java Concurrent packages:
+
+ExecutorService
+
+ThreadPool
+
+CountDownLatch
+Phaser
+CyclicBarrier
+
+
+Deadlock - 
+	thread1 ----> update into excelsheet cell $W30 but is also looking to print using printer
+	thread2 ----> is printing using printer but also want to update into excelsheet cell $W30 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+Spring Boot - is based on Spring Framework
+			- it simplifies project creation, integration, configuration, building, packaging and running 
+			- it is opiniated (annotation, resouces --->properties/yml, pom.xml)
+
+
+
+
+Maven - is a tool which helps to manage dependencies in project
+	  - compile, package, deploy, publish
+	  - pom.xml
+	  - artifact name, group, version
+
+
+
+Dependencies:
+I need a :
+	1. Database (Oracle, MySQL, PostgreSQL, DB2, RDS) to connect
+	2. Security libraries (Cryptos, JAAS, etc.)
+	3. Sensors driver
+	4. Camera driver
+	5. Kafka Queue (RabbitMQ, ActiveMQ etc.)
+	6. Redis Cache
+	7. AWS S3
+	8. this goes on..
+
+
+Spring Framework:
+	- Spring IoC/Dependency Injection (Inversion of Control), bean/object life cycles, @Autowire, @Bean, @Service, @Controller, @RestController, @Component
+	- Spring MVC (Model, View-->JSP/HTML/CSS/JavaScripts etc., Controller) - Web application can run Tomcat (WAR)
+	- Spring ORM (Object Relation Mapping) - JPA, Hibernate etc.
+	- Spring Security - Authentication, Authorization 
+	- Spring AOP (Aspect Oriented Programming) - NFR (Non Functional Requirement)
+
+
+

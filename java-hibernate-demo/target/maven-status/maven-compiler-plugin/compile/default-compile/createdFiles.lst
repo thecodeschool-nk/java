@@ -1,0 +1,5 @@
+com/thecodeschool/hibrernate/connection/HibernateUtil.class
+com/thecodeschool/hibrernate/dao/ProductDao.class
+com/thecodeschool/hibrernate/service/ProductService.class
+com/thecodeschool/hibrernate/HibernateDemo.class
+com/thecodeschool/hibrernate/entity/Product.class
