@@ -1,7 +1,7 @@
 ## Lock
 In Java, the Lock interface is part of the java.util.concurrent.locks package and provides a more flexible mechanism for thread synchronization compared to the traditional synchronized keyword. Locks allow more control over synchronization, including try-lock mechanisms, interruptible locks, and conditions for thread coordination.
 
-###Key Methods in the Lock Interface
+### Key Methods in the Lock Interface
 * void lock()
 Acquires the lock. If the lock is already held by another thread, the current thread waits until the lock is available.
 
@@ -23,23 +23,23 @@ Returns a Condition object for the lock, which can be used for thread communicat
 ## ReentrantLock
 The source code for the ReentrantLock class is part of the Java Development Kit (JDK). Below is a simplified and annotated version of the key components in java.util.concurrent.locks.ReentrantLock, focusing on its main functionality.
 
-###Key Components of ReentrantLock
+### Key Components of ReentrantLock
 The ReentrantLock class internally uses an instance of AbstractQueuedSynchronizer (AQS) to manage synchronization. AQS is a framework for implementing blocking locks and related synchronizers.
 
-####Key Points
-####AbstractQueuedSynchronizer (AQS):
+#### Key Points
+#### AbstractQueuedSynchronizer (AQS):
 The core framework used by ReentrantLock to manage the lock state and thread queuing.
 
-#####Fair vs. Non-Fair Locking:
+##### Fair vs. Non-Fair Locking:
 
-#####Fair: 
+##### Fair: 
 Threads are granted access in the order they request it.
-#####Non-Fair: 
+##### Non-Fair: 
 Threads can "cut the line," leading to potential performance benefits but less fairness.
-#####Reentrancy:
+##### Reentrancy:
 The lock supports reentrancy, allowing the same thread to acquire the lock multiple times.
 
-#####Conditions:
+##### Conditions:
 newCondition() provides a Condition object for finer control over thread communication.
 
 This is a simplified explanation. If you'd like, I can dive deeper into any specific part!
